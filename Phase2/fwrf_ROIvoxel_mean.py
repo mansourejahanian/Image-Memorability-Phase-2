@@ -126,8 +126,10 @@ roi_data = np.delete(roi_data, del_idx, axis=1)
 trn_roi_data = roi_data[~shared_mask]
 val_roi_data = roi_data[shared_mask]
 
-from torchmodel.models.alexnet import Alexnet_fmaps
-_fmaps_fn = Alexnet_fmaps().to(device)
+from torchmodel.models.myresnet import Resnet_fmaps
+_fmaps_fn = Resnet_fmaps().to(device)
+# from torchmodel.models.alexnet import Alexnet_fmaps
+# _fmaps_fn = Alexnet_fmaps().to(device)
 
 _x = torch.tensor(image_data[:100]).to(device) # the input variable.
 _fmaps = _fmaps_fn(_x)

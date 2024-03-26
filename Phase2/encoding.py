@@ -18,6 +18,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 from torchmodel.models.alexnet import Alexnet_fmaps
+from torchmodel.models.myresnet import Resnet_fmaps
 
 def iterate_range(start, length, batchsize):
     batch_count = int(length // batchsize )
@@ -136,7 +137,8 @@ def load_encoding(subject, model_name='dnn_fwrf',device=torch.device("cpu")):
     model_params = embed_dict({k: np.copy(d) for k,d in model_params_set.items()})
     model_params_set.close()
     
-    _fmaps_fn = Alexnet_fmaps().to(device)
+    _fmaps_fn = Resnet_fmaps().to(device)
+    # _fmaps_fn = Alexnet_fmaps().to(device)
     _fmaps_fn = Torch_filter_fmaps(_fmaps_fn, model_params['lmask'], model_params['fmask'])
     
     params = [p[:voxel_batch_size] if p is not None else None for p in model_params['params']]
