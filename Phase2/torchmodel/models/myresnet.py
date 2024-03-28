@@ -25,7 +25,7 @@ class MyResnet(nn.Module):
         out = torch.flatten(out, start_dim=1)
         fc1 = self.resnet.fc(out)
 
-        return [c1, layer1, layer2, layer3, layer4, fc1[:, :, None, None]]
+        return [layer1, layer2, layer3, layer4]
 
     def forward(self, x):
         return self._forward_impl(x)
