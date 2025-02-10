@@ -19,3 +19,12 @@
 8. `pytorch_pretrained_biggan` is available here: https://github.com/huggingface/pytorch-pretrained-BigGAN
 
 Note: `getROImask.py`, `getmaskedROI.py` and `getmaskedROImean.py` deal with the NSD data which has not been released yet and are not necessary to run NeuroGen at this time. Paths in all scripts may need to change according to needs.
+
+## Acknowledgment
+We sincerely thank the authors of following open-source projects:
+
+NeuroGen: activation optimized image synthesis for discovery neuroscience:
+https://doi.org/10.1016/j.neuroimage.2021.118812
+
+Controlling Memorability of Face Images:
+https://doi.org/10.48550/arXiv.2202.11896
